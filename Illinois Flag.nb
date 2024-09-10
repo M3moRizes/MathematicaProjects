@@ -1,0 +1,1387 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     70417,       1379]
+NotebookOptionsPosition[     69729,       1360]
+NotebookOutlinePosition[     70135,       1376]
+CellTagsIndexPosition[     70092,       1373]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"MyBlue", "=", 
+   RowBox[{"RGBColor", "[", 
+    RowBox[{
+     RowBox[{"0", "/", "255"}], ",", 
+     RowBox[{"39", "/", "255"}], ",", 
+     RowBox[{"104", "/", "255"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"MyRed", "=", 
+   RowBox[{"RGBColor", "[", 
+    RowBox[{
+     RowBox[{"191", "/", "255"}], ",", 
+     RowBox[{"10", "/", "255"}], ",", 
+     RowBox[{"48", "/", "255"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"MyWhite", "=", 
+    RowBox[{"RGBColor", "[", 
+     RowBox[{
+      RowBox[{"255", "/", "255"}], ",", 
+      RowBox[{"255", "/", "255"}], ",", 
+      RowBox[{"255", "/", "255"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"w", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"h", "=", 
+   RowBox[{
+    RowBox[{"3", "/", "5"}], "*", "w"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"b", "=", 
+   RowBox[{"w", "/", "4"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"t", "=", 
+    RowBox[{"4", "/", "5"}]}], ";"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Width", " ", "of", " ", "star", " ", "with", " ", "radius", " ", 
+    RowBox[{"r", ":", " ", 
+     RowBox[{"2", "*", "r", "*", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"2", "*", 
+        RowBox[{"Pi", "/", "5"}]}], "]"}]}]}]}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"2", "*", 
+   RowBox[{"Sin", "[", 
+    RowBox[{"2", "*", 
+     RowBox[{"Pi", "/", "5"}]}], "]"}]}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Height", " ", "of", " ", "star", " ", "with", " ", "radius", " ", 
+    RowBox[{"r", ":", " ", 
+     RowBox[{"r", "*", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"Cos", "[", 
+         RowBox[{"Pi", "/", "5"}], "]"}], "+", "1"}], ")"}]}]}]}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Cos", "[", 
+    RowBox[{"Pi", "/", "5"}], "]"}], "+", "1"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"MyStar", "[", 
+    RowBox[{
+     RowBox[{"x_", ":", "0"}], ",", 
+     RowBox[{"y_", ":", "0"}], ",", 
+     RowBox[{"r_", ":", "1"}]}], "]"}], ":=", 
+   RowBox[{"Polygon", "[", 
+    RowBox[{"Flatten", "[", 
+     RowBox[{
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"r", "*", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"Cos", "[", 
+               RowBox[{
+                RowBox[{"2", "*", "Pi", "*", 
+                 RowBox[{"k", "/", "5"}]}], "+", 
+                RowBox[{"Pi", "/", "2"}]}], "]"}], ",", 
+              RowBox[{"Sin", "[", 
+               RowBox[{
+                RowBox[{"2", "*", "Pi", "*", 
+                 RowBox[{"k", "/", "5"}]}], "+", 
+                RowBox[{"Pi", "/", "2"}]}], "]"}]}], "}"}]}], "+", 
+           RowBox[{"{", 
+            RowBox[{"x", ",", "y"}], "}"}]}], ",", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"r", "/", 
+             RowBox[{"(", 
+              RowBox[{"1", "+", "GoldenRatio"}], ")"}]}], "*", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"Cos", "[", 
+               RowBox[{
+                RowBox[{"2", "*", "Pi", "*", 
+                 RowBox[{"k", "/", "5"}]}], "+", 
+                RowBox[{"Pi", "/", "2"}], "+", 
+                RowBox[{"Pi", "/", "5"}]}], "]"}], ",", 
+              RowBox[{"Sin", "[", 
+               RowBox[{
+                RowBox[{"2", "*", "Pi", "*", 
+                 RowBox[{"k", "/", "5"}]}], "+", 
+                RowBox[{"Pi", "/", "2"}], "+", 
+                RowBox[{"Pi", "/", "5"}]}], "]"}]}], "}"}]}], "+", 
+           RowBox[{"{", 
+            RowBox[{"x", ",", "y"}], "}"}]}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"k", ",", "0", ",", "4"}], "}"}]}], "]"}], ",", "1"}], "]"}],
+     "]"}]}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Stripes", "=", 
+   RowBox[{"{", 
+    RowBox[{"MyWhite", ",", 
+     RowBox[{"Rectangle", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"w", ",", "h"}], "}"}]}], "]"}], ",", "MyBlue", ",", 
+     RowBox[{"Rectangle", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", 
+         RowBox[{"h", "/", "3"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"w", ",", 
+         RowBox[{"h", "*", 
+          RowBox[{"2", "/", "3"}]}]}], "}"}]}], "]"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Banner", "=", 
+   RowBox[{"{", 
+    RowBox[{"MyRed", ",", 
+     RowBox[{"Polygon", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"b", "-", 
+           RowBox[{"b", "/", "4"}]}], ",", "0"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"b", ",", "0"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"b", ",", "h"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"b", "-", 
+           RowBox[{"b", "/", "4"}]}], ",", "h"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", 
+          RowBox[{
+           RowBox[{"h", "*", 
+            RowBox[{"2", "/", "3"}]}], "+", 
+           RowBox[{"h", "/", "12"}]}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", 
+          RowBox[{
+           RowBox[{"h", "/", "3"}], "-", 
+           RowBox[{"h", "/", "12"}]}]}], "}"}]}], "}"}], "]"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"BigStar", "=", 
+   RowBox[{"{", 
+    RowBox[{"MyWhite", ",", 
+     RowBox[{"MyStar", "[", 
+      RowBox[{
+       RowBox[{"b", "/", "2"}], ",", 
+       RowBox[{"h", "/", "2"}], ",", 
+       RowBox[{"t", "*", 
+        RowBox[{"h", "/", "6"}]}]}], "]"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"NorthStars", "=", 
+   RowBox[{"Prepend", "[", 
+    RowBox[{
+     RowBox[{"Flatten", "[", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"MyStar", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"b", "/", "8"}], "+", 
+           RowBox[{"i", "*", 
+            RowBox[{"b", "/", "4"}]}]}], ",", 
+          RowBox[{
+           RowBox[{"2", "*", 
+            RowBox[{"h", "/", "3"}]}], "+", 
+           RowBox[{"h", "/", "24"}], "+", 
+           RowBox[{"j", "*", 
+            RowBox[{"h", "/", "12"}]}]}], ",", 
+          RowBox[{"t", "*", 
+           RowBox[{"h", "/", "24"}]}]}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "0", ",", "3"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"j", ",", "0", ",", "i"}], "}"}]}], "]"}], "]"}], ",", 
+     "MyBlue"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SouthStars", "=", 
+    RowBox[{"Prepend", "[", 
+     RowBox[{
+      RowBox[{"Flatten", "[", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"MyStar", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"b", "/", "8"}], "+", 
+            RowBox[{"i", "*", 
+             RowBox[{"b", "/", "4"}]}]}], ",", 
+           RowBox[{
+            RowBox[{"1", "*", 
+             RowBox[{"h", "/", "3"}]}], "-", 
+            RowBox[{"h", "/", "24"}], "-", 
+            RowBox[{"j", "*", 
+             RowBox[{"h", "/", "12"}]}]}], ",", 
+           RowBox[{"t", "*", 
+            RowBox[{"h", "/", "24"}]}]}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "0", ",", "3"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"j", ",", "0", ",", "i"}], "}"}]}], "]"}], "]"}], ",", 
+      "MyBlue"}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Graphics", "[", 
+  RowBox[{"Join", "[", 
+   RowBox[{
+   "Stripes", ",", "Banner", ",", "BigStar", ",", "NorthStars", ",", 
+    "SouthStars"}], "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Export", "[", 
+    RowBox[{
+    "\"\<C:\\\\Users\\\\Memoa\\\\OneDrive\\\\Pictures\\\\Flags\\\\Illinois \
+(6).svg\>\"", ",", "%"}], "]"}], "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.9330758443921566`*^9, 3.933075848379244*^9}, {
+   3.9330758996725693`*^9, 3.933076328935302*^9}, {3.9330763621122756`*^9, 
+   3.9330764695262938`*^9}, {3.933076507366362*^9, 3.9330765074861336`*^9}, {
+   3.9330766485306892`*^9, 3.9330768177957935`*^9}, {3.933076921960314*^9, 
+   3.9330769669556026`*^9}, {3.933077015385661*^9, 3.933077018032362*^9}, {
+   3.933077142255786*^9, 3.9330774292824163`*^9}, {3.9330774727025805`*^9, 
+   3.9330775043441525`*^9}, {3.933077555448818*^9, 3.9330775984121113`*^9}, {
+   3.9330776338384485`*^9, 3.9330776901585197`*^9}, {3.933077749365277*^9, 
+   3.9330778785388155`*^9}, {3.933077910003889*^9, 3.9330781359297934`*^9}, {
+   3.9330782448491917`*^9, 3.933078506328126*^9}, {3.9330785557717433`*^9, 
+   3.9330785749460177`*^9}, {3.9330786058899574`*^9, 3.93307875206931*^9}, {
+   3.933078810517499*^9, 3.9330788928794146`*^9}, 3.9330808904209905`*^9, 
+   3.933083746568342*^9, {3.93308438116227*^9, 3.933084399854895*^9}, {
+   3.933084449055997*^9, 3.933084523776941*^9}, {3.93308469481136*^9, 
+   3.93308469682825*^9}, {3.9330847493175735`*^9, 3.9330847761188064`*^9}, {
+   3.9330848910455647`*^9, 3.9330849965092707`*^9}, {3.9330850330399013`*^9, 
+   3.9330850420346265`*^9}, {3.933085180277588*^9, 3.9330852494632673`*^9}, {
+   3.9330853010260563`*^9, 3.9330853349210567`*^9}, {3.933085407572755*^9, 
+   3.93308541572565*^9}, {3.933085449798278*^9, 3.9330855406927547`*^9}, {
+   3.9330855745641947`*^9, 3.9330856534388123`*^9}, {3.933085689829779*^9, 
+   3.933085783343236*^9}, {3.9330858193773937`*^9, 3.933085837289982*^9}, {
+   3.9330858894898076`*^9, 3.9330859009464273`*^9}, {3.9330860133434076`*^9, 
+   3.9330860510424376`*^9}, {3.9330860866463556`*^9, 
+   3.9330861166552925`*^9}, {3.933086214075595*^9, 3.9330862555022793`*^9}, {
+   3.9330863128024845`*^9, 3.9330863656824675`*^9}, {3.9330864219577527`*^9, 
+   3.9330864258465295`*^9}, {3.9330866894028077`*^9, 3.933086690621875*^9}, 
+   3.9330868042420406`*^9, {3.9330868398606195`*^9, 3.9330868406339684`*^9}, 
+   3.933086925783745*^9, 3.9330869642805843`*^9, {3.9330870042460513`*^9, 
+   3.9330870456083107`*^9}, 3.9330870766823635`*^9, {3.933087112139728*^9, 
+   3.933087117381531*^9}, 3.933087149907976*^9, {3.933087323369179*^9, 
+   3.9330873389403963`*^9}, {3.933087417074514*^9, 3.9330874176045933`*^9}, {
+   3.9330874576886644`*^9, 3.9330875156403875`*^9}, {3.9330875634817743`*^9, 
+   3.933087633504504*^9}, {3.9330877650564184`*^9, 3.9330877693677387`*^9}, {
+   3.9330878108776855`*^9, 3.9330878451225996`*^9}, {3.9330878836523757`*^9, 
+   3.9330879006864386`*^9}, {3.933087930938386*^9, 3.933087964083931*^9}, {
+   3.9330880111942153`*^9, 3.9330881610571513`*^9}, {3.933088245347763*^9, 
+   3.9330882860472794`*^9}, {3.933088338840742*^9, 3.933088358526519*^9}, {
+   3.9330883972106843`*^9, 3.933088410152699*^9}, {3.9330885499253416`*^9, 
+   3.9330885500564337`*^9}, {3.9330886078790364`*^9, 3.933088661067293*^9}, {
+   3.933088748254203*^9, 3.9330887659595213`*^9}, {3.933088841672525*^9, 
+   3.93308888875846*^9}, {3.933088966647435*^9, 3.9330890390937185`*^9}, {
+   3.9330891452255836`*^9, 3.933089222497903*^9}, {3.933089263186452*^9, 
+   3.933089275135932*^9}, {3.933089428455595*^9, 3.9330894377748666`*^9}, {
+   3.9330894827038918`*^9, 3.933089594093644*^9}, 3.9330896446738687`*^9},
+ CellLabel->
+  "In[2133]:=",ExpressionUUID->"95eeb980-b7da-442a-bd5c-875524e79644"],
+
+Cell[BoxData[
+ RowBox[{"2", " ", 
+  SqrtBox[
+   RowBox[{
+    FractionBox["5", "8"], "+", 
+    FractionBox[
+     SqrtBox["5"], "8"]}]]}]], "Output",
+ CellChangeTimes->{
+  3.9330781361999817`*^9, {3.933078288043663*^9, 3.9330783384654837`*^9}, {
+   3.9330783806186495`*^9, 3.933078405526003*^9}, {3.933078488810893*^9, 
+   3.933078506764121*^9}, {3.9330786090733414`*^9, 3.93307861462794*^9}, {
+   3.933078664680829*^9, 3.933078695767528*^9}, {3.933078813502664*^9, 
+   3.9330788211195354`*^9}, {3.933078856366678*^9, 3.9330788670980577`*^9}, 
+   3.933084383944827*^9, {3.9330845083224287`*^9, 3.933084524144925*^9}, 
+   3.9330846972352343`*^9, {3.933084752884703*^9, 3.933084776887989*^9}, 
+   3.933085209050215*^9, {3.933085500379154*^9, 3.9330855443929567`*^9}, {
+   3.93308572832165*^9, 3.933085735991324*^9}, {3.933085779693188*^9, 
+   3.9330857837028446`*^9}, {3.9330858225287743`*^9, 3.93308583801225*^9}, {
+   3.9330858897927713`*^9, 3.933085901347967*^9}, {3.9330860959990234`*^9, 
+   3.9330861169429708`*^9}, 3.933086215261466*^9, {3.9330862515863805`*^9, 
+   3.933086255945149*^9}, {3.93308631646259*^9, 3.9330863660839043`*^9}, {
+   3.9330868014503064`*^9, 3.933086804503543*^9}, 3.933086840971021*^9, {
+   3.933086900703394*^9, 3.9330869261040134`*^9}, 3.933086964820196*^9, {
+   3.9330870045431566`*^9, 3.933087046660872*^9}, 3.93308707700877*^9, {
+   3.9330871126074367`*^9, 3.9330871178909235`*^9}, 3.9330871506266713`*^9, {
+   3.933087324011566*^9, 3.933087339245225*^9}, {3.9330874955061026`*^9, 
+   3.933087516294959*^9}, 3.9330876309210186`*^9, {3.9330877725023937`*^9, 
+   3.933087822178336*^9}, 3.933087901348626*^9, 3.933087942440195*^9, 
+   3.9330881617611623`*^9, 3.9330883651512413`*^9, {3.9330883977272177`*^9, 
+   3.9330884040804553`*^9}, 3.9330885531748247`*^9, {3.933088620927594*^9, 
+   3.9330886625464516`*^9}, {3.9330888572318087`*^9, 3.933088864157709*^9}, 
+   3.933088987471569*^9, {3.933089021033568*^9, 3.933089039721099*^9}, {
+   3.9330891728777485`*^9, 3.9330892231608467`*^9}, {3.9330892688855276`*^9, 
+   3.933089275676021*^9}, 3.933089438257991*^9, {3.9330894911440306`*^9, 
+   3.9330895529852304`*^9}, 3.933089591274815*^9, 3.9330896489953914`*^9},
+ CellLabel->
+  "Out[2140]=",ExpressionUUID->"536c7ccf-3ff7-4747-a432-0de05f6d3e72"],
+
+Cell[BoxData[
+ RowBox[{"1", "+", 
+  RowBox[{
+   FractionBox["1", "4"], " ", 
+   RowBox[{"(", 
+    RowBox[{"1", "+", 
+     SqrtBox["5"]}], ")"}]}]}]], "Output",
+ CellChangeTimes->{
+  3.9330781361999817`*^9, {3.933078288043663*^9, 3.9330783384654837`*^9}, {
+   3.9330783806186495`*^9, 3.933078405526003*^9}, {3.933078488810893*^9, 
+   3.933078506764121*^9}, {3.9330786090733414`*^9, 3.93307861462794*^9}, {
+   3.933078664680829*^9, 3.933078695767528*^9}, {3.933078813502664*^9, 
+   3.9330788211195354`*^9}, {3.933078856366678*^9, 3.9330788670980577`*^9}, 
+   3.933084383944827*^9, {3.9330845083224287`*^9, 3.933084524144925*^9}, 
+   3.9330846972352343`*^9, {3.933084752884703*^9, 3.933084776887989*^9}, 
+   3.933085209050215*^9, {3.933085500379154*^9, 3.9330855443929567`*^9}, {
+   3.93308572832165*^9, 3.933085735991324*^9}, {3.933085779693188*^9, 
+   3.9330857837028446`*^9}, {3.9330858225287743`*^9, 3.93308583801225*^9}, {
+   3.9330858897927713`*^9, 3.933085901347967*^9}, {3.9330860959990234`*^9, 
+   3.9330861169429708`*^9}, 3.933086215261466*^9, {3.9330862515863805`*^9, 
+   3.933086255945149*^9}, {3.93308631646259*^9, 3.9330863660839043`*^9}, {
+   3.9330868014503064`*^9, 3.933086804503543*^9}, 3.933086840971021*^9, {
+   3.933086900703394*^9, 3.9330869261040134`*^9}, 3.933086964820196*^9, {
+   3.9330870045431566`*^9, 3.933087046660872*^9}, 3.93308707700877*^9, {
+   3.9330871126074367`*^9, 3.9330871178909235`*^9}, 3.9330871506266713`*^9, {
+   3.933087324011566*^9, 3.933087339245225*^9}, {3.9330874955061026`*^9, 
+   3.933087516294959*^9}, 3.9330876309210186`*^9, {3.9330877725023937`*^9, 
+   3.933087822178336*^9}, 3.933087901348626*^9, 3.933087942440195*^9, 
+   3.9330881617611623`*^9, 3.9330883651512413`*^9, {3.9330883977272177`*^9, 
+   3.9330884040804553`*^9}, 3.9330885531748247`*^9, {3.933088620927594*^9, 
+   3.9330886625464516`*^9}, {3.9330888572318087`*^9, 3.933088864157709*^9}, 
+   3.933088987471569*^9, {3.933089021033568*^9, 3.933089039721099*^9}, {
+   3.9330891728777485`*^9, 3.9330892231608467`*^9}, {3.9330892688855276`*^9, 
+   3.933089275676021*^9}, 3.933089438257991*^9, {3.9330894911440306`*^9, 
+   3.9330895529852304`*^9}, 3.933089591274815*^9, 3.933089649005048*^9},
+ CellLabel->
+  "Out[2141]=",ExpressionUUID->"9b1a0638-1a90-42fe-a3d8-12a1bd43c41c"],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {RGBColor[1, 1, 1], 
+    RectangleBox[{0, 0}, NCache[{1, Rational[3, 5]}, {1, 0.6}]]}, 
+   {RGBColor[0, 
+     NCache[
+      Rational[13, 85], 0.15294117647058825`], 
+     NCache[
+      Rational[104, 255], 0.40784313725490196`]], 
+    RectangleBox[NCache[{0, Rational[1, 5]}, {0, 0.2}], 
+     NCache[{1, Rational[2, 5]}, {1, 0.4}]]}, 
+   {RGBColor[
+     NCache[
+      Rational[191, 255], 0.7490196078431373], 
+     NCache[
+      Rational[2, 51], 0.0392156862745098], 
+     NCache[
+      Rational[16, 85], 0.18823529411764706`]], 
+    PolygonBox[
+     NCache[{{Rational[3, 16], 0}, {Rational[1, 4], 0}, {
+       Rational[1, 4], Rational[3, 5]}, {Rational[3, 16], Rational[3, 5]}, {
+       0, Rational[9, 20]}, {0, Rational[3, 20]}}, {{0.1875, 0}, {0.25, 0}, {
+       0.25, 0.6}, {0.1875, 0.6}, {0, 0.45}, {0, 0.15}}]]}, 
+   {RGBColor[1, 1, 1], 
+    PolygonBox[
+     NCache[{{Rational[1, 8], Rational[19, 50]}, {
+       Rational[1, 8] + 
+        Rational[-2, 25] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[3, 10] + 
+        Rational[1, 50] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[1, 8] + 
+        Rational[-2, 25] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[3, 10] + 
+        Rational[1, 50] (-1 + 5^Rational[1, 2])}, {
+       Rational[1, 8] + 
+        Rational[-2, 25] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[3, 10] + 
+        Rational[1, 50] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[1, 8] + 
+        Rational[-2, 25] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[3, 10] + 
+        Rational[1, 50] (-1 - 5^Rational[1, 2])}, {
+       Rational[1, 8], Rational[3, 10] + 
+        Rational[-2, 25]/(1 + GoldenRatio)}, {
+       Rational[1, 8] + 
+        Rational[2, 25] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[3, 10] + 
+        Rational[1, 50] (-1 - 5^Rational[1, 2])}, {
+       Rational[1, 8] + 
+        Rational[2, 25] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[3, 10] + 
+        Rational[1, 50] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[1, 8] + 
+        Rational[2, 25] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[3, 10] + 
+        Rational[1, 50] (-1 + 5^Rational[1, 2])}, {
+       Rational[1, 8] + 
+        Rational[2, 25] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[3, 10] + 
+        Rational[1, 50] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}}, {{0.125, 
+      0.38}, {0.10703888093681659`, 0.32472135954999576`}, {
+      0.04891547869638771, 0.3247213595499958}, {0.09593829887978556, 
+      0.2905572809000084}, {0.07797717981660215, 0.23527864045000418`}, {
+      0.125, 0.26944271909999157`}, {0.17202282018339785`, 
+      0.23527864045000418`}, {0.15406170112021444`, 0.2905572809000084}, {
+      0.2010845213036123, 0.3247213595499958}, {0.14296111906318343`, 
+      0.32472135954999576`}}]]}, 
+   {RGBColor[0, 
+     NCache[
+      Rational[13, 85], 0.15294117647058825`], 
+     NCache[
+      Rational[104, 255], 0.40784313725490196`]], 
+    PolygonBox[
+     NCache[{{Rational[1, 32], Rational[89, 200]}, {
+       Rational[1, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[17, 40] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[1, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[17, 40] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[1, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[17, 40] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[1, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[17, 40] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[1, 32], Rational[17, 40] + 
+        Rational[-1, 50]/(1 + GoldenRatio)}, {
+       Rational[1, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[17, 40] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[1, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[17, 40] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[1, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[17, 40] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[1, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[17, 40] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}}, {{
+      0.03125, 0.445}, {0.026759720234204146`, 0.43118033988749893`}, {
+      0.012228869674096927`, 0.43118033988749893`}, {0.02398457471994639, 
+      0.4226393202250021}, {0.01949429495415054, 0.40881966011250104`}, {
+      0.03125, 0.4173606797749979}, {0.04300570504584946, 
+      0.40881966011250104`}, {0.03851542528005361, 0.4226393202250021}, {
+      0.05027113032590307, 0.43118033988749893`}, {0.03574027976579586, 
+      0.43118033988749893`}}]], 
+    PolygonBox[
+     NCache[{{Rational[3, 32], Rational[89, 200]}, {
+       Rational[3, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[17, 40] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[3, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[17, 40] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[3, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[17, 40] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[3, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[17, 40] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[3, 32], Rational[17, 40] + 
+        Rational[-1, 50]/(1 + GoldenRatio)}, {
+       Rational[3, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[17, 40] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[3, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[17, 40] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[3, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[17, 40] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[3, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[17, 40] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}}, {{
+      0.09375, 0.445}, {0.08925972023420414, 0.43118033988749893`}, {
+      0.07472886967409692, 0.43118033988749893`}, {0.08648457471994639, 
+      0.4226393202250021}, {0.08199429495415053, 0.40881966011250104`}, {
+      0.09375, 0.4173606797749979}, {0.10550570504584947`, 
+      0.40881966011250104`}, {0.10101542528005361`, 0.4226393202250021}, {
+      0.11277113032590308`, 0.43118033988749893`}, {0.09824027976579586, 
+      0.43118033988749893`}}]], 
+    PolygonBox[
+     NCache[{{Rational[3, 32], Rational[99, 200]}, {
+       Rational[3, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[19, 40] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[3, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[19, 40] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[3, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[19, 40] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[3, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[19, 40] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[3, 32], Rational[19, 40] + 
+        Rational[-1, 50]/(1 + GoldenRatio)}, {
+       Rational[3, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[19, 40] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[3, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[19, 40] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[3, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[19, 40] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[3, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[19, 40] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}}, {{
+      0.09375, 0.495}, {0.08925972023420414, 0.4811803398874989}, {
+      0.07472886967409692, 0.4811803398874989}, {0.08648457471994639, 
+      0.4726393202250021}, {0.08199429495415053, 0.458819660112501}, {0.09375,
+       0.4673606797749979}, {0.10550570504584947`, 0.458819660112501}, {
+      0.10101542528005361`, 0.4726393202250021}, {0.11277113032590308`, 
+      0.4811803398874989}, {0.09824027976579586, 0.4811803398874989}}]], 
+    PolygonBox[
+     NCache[{{Rational[5, 32], Rational[89, 200]}, {
+       Rational[5, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[17, 40] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[5, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[17, 40] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[5, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[17, 40] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[5, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[17, 40] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[5, 32], Rational[17, 40] + 
+        Rational[-1, 50]/(1 + GoldenRatio)}, {
+       Rational[5, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[17, 40] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[5, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[17, 40] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[5, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[17, 40] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[5, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[17, 40] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}}, {{
+      0.15625, 0.445}, {0.15175972023420414`, 0.43118033988749893`}, {
+      0.13722886967409692`, 0.43118033988749893`}, {0.1489845747199464, 
+      0.4226393202250021}, {0.14449429495415053`, 0.40881966011250104`}, {
+      0.15625, 0.4173606797749979}, {0.16800570504584947`, 
+      0.40881966011250104`}, {0.1635154252800536, 0.4226393202250021}, {
+      0.17527113032590308`, 0.43118033988749893`}, {0.16074027976579586`, 
+      0.43118033988749893`}}]], 
+    PolygonBox[
+     NCache[{{Rational[5, 32], Rational[99, 200]}, {
+       Rational[5, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[19, 40] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[5, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[19, 40] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[5, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[19, 40] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[5, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[19, 40] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[5, 32], Rational[19, 40] + 
+        Rational[-1, 50]/(1 + GoldenRatio)}, {
+       Rational[5, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[19, 40] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[5, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[19, 40] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[5, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[19, 40] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[5, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[19, 40] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}}, {{
+      0.15625, 0.495}, {0.15175972023420414`, 0.4811803398874989}, {
+      0.13722886967409692`, 0.4811803398874989}, {0.1489845747199464, 
+      0.4726393202250021}, {0.14449429495415053`, 0.458819660112501}, {
+      0.15625, 0.4673606797749979}, {0.16800570504584947`, 
+      0.458819660112501}, {0.1635154252800536, 0.4726393202250021}, {
+      0.17527113032590308`, 0.4811803398874989}, {0.16074027976579586`, 
+      0.4811803398874989}}]], 
+    PolygonBox[
+     NCache[{{Rational[5, 32], Rational[109, 200]}, {
+       Rational[5, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[21, 40] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[5, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[21, 40] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[5, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[21, 40] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[5, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[21, 40] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[5, 32], Rational[21, 40] + 
+        Rational[-1, 50]/(1 + GoldenRatio)}, {
+       Rational[5, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[21, 40] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[5, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[21, 40] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[5, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[21, 40] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[5, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[21, 40] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}}, {{
+      0.15625, 0.545}, {0.15175972023420414`, 0.531180339887499}, {
+      0.13722886967409692`, 0.531180339887499}, {0.1489845747199464, 
+      0.5226393202250021}, {0.14449429495415053`, 0.5088196601125011}, {
+      0.15625, 0.5173606797749979}, {0.16800570504584947`, 
+      0.5088196601125011}, {0.1635154252800536, 0.5226393202250021}, {
+      0.17527113032590308`, 0.531180339887499}, {0.16074027976579586`, 
+      0.531180339887499}}]], 
+    PolygonBox[
+     NCache[{{Rational[7, 32], Rational[89, 200]}, {
+       Rational[7, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[17, 40] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[7, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[17, 40] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[7, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[17, 40] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[7, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[17, 40] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[7, 32], Rational[17, 40] + 
+        Rational[-1, 50]/(1 + GoldenRatio)}, {
+       Rational[7, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[17, 40] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[7, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[17, 40] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[7, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[17, 40] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[7, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[17, 40] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}}, {{
+      0.21875, 0.445}, {0.21425972023420414`, 0.43118033988749893`}, {
+      0.19972886967409692`, 0.43118033988749893`}, {0.2114845747199464, 
+      0.4226393202250021}, {0.20699429495415053`, 0.40881966011250104`}, {
+      0.21875, 0.4173606797749979}, {0.23050570504584947`, 
+      0.40881966011250104`}, {0.2260154252800536, 0.4226393202250021}, {
+      0.23777113032590308`, 0.43118033988749893`}, {0.22324027976579586`, 
+      0.43118033988749893`}}]], 
+    PolygonBox[
+     NCache[{{Rational[7, 32], Rational[99, 200]}, {
+       Rational[7, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[19, 40] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[7, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[19, 40] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[7, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[19, 40] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[7, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[19, 40] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[7, 32], Rational[19, 40] + 
+        Rational[-1, 50]/(1 + GoldenRatio)}, {
+       Rational[7, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[19, 40] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[7, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[19, 40] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[7, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[19, 40] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[7, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[19, 40] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}}, {{
+      0.21875, 0.495}, {0.21425972023420414`, 0.4811803398874989}, {
+      0.19972886967409692`, 0.4811803398874989}, {0.2114845747199464, 
+      0.4726393202250021}, {0.20699429495415053`, 0.458819660112501}, {
+      0.21875, 0.4673606797749979}, {0.23050570504584947`, 
+      0.458819660112501}, {0.2260154252800536, 0.4726393202250021}, {
+      0.23777113032590308`, 0.4811803398874989}, {0.22324027976579586`, 
+      0.4811803398874989}}]], 
+    PolygonBox[
+     NCache[{{Rational[7, 32], Rational[109, 200]}, {
+       Rational[7, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[21, 40] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[7, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[21, 40] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[7, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[21, 40] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[7, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[21, 40] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[7, 32], Rational[21, 40] + 
+        Rational[-1, 50]/(1 + GoldenRatio)}, {
+       Rational[7, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[21, 40] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[7, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[21, 40] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[7, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[21, 40] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[7, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[21, 40] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}}, {{
+      0.21875, 0.545}, {0.21425972023420414`, 0.531180339887499}, {
+      0.19972886967409692`, 0.531180339887499}, {0.2114845747199464, 
+      0.5226393202250021}, {0.20699429495415053`, 0.5088196601125011}, {
+      0.21875, 0.5173606797749979}, {0.23050570504584947`, 
+      0.5088196601125011}, {0.2260154252800536, 0.5226393202250021}, {
+      0.23777113032590308`, 0.531180339887499}, {0.22324027976579586`, 
+      0.531180339887499}}]], 
+    PolygonBox[
+     NCache[{{Rational[7, 32], Rational[119, 200]}, {
+       Rational[7, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[23, 40] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[7, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[23, 40] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[7, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[23, 40] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[7, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[23, 40] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[7, 32], Rational[23, 40] + 
+        Rational[-1, 50]/(1 + GoldenRatio)}, {
+       Rational[7, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[23, 40] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[7, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[23, 40] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[7, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[23, 40] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[7, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[23, 40] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}}, {{
+      0.21875, 0.595}, {0.21425972023420414`, 0.581180339887499}, {
+      0.19972886967409692`, 0.581180339887499}, {0.2114845747199464, 
+      0.5726393202250021}, {0.20699429495415053`, 0.5588196601125011}, {
+      0.21875, 0.5673606797749978}, {0.23050570504584947`, 
+      0.5588196601125011}, {0.2260154252800536, 0.5726393202250021}, {
+      0.23777113032590308`, 0.581180339887499}, {0.22324027976579586`, 
+      0.581180339887499}}]]}, 
+   {RGBColor[0, 
+     NCache[
+      Rational[13, 85], 0.15294117647058825`], 
+     NCache[
+      Rational[104, 255], 0.40784313725490196`]], 
+    PolygonBox[
+     NCache[{{Rational[1, 32], Rational[39, 200]}, {
+       Rational[1, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[7, 40] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[1, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[7, 40] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[1, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[7, 40] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[1, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[7, 40] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[1, 32], Rational[7, 40] + 
+        Rational[-1, 50]/(1 + GoldenRatio)}, {
+       Rational[1, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[7, 40] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[1, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[7, 40] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[1, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[7, 40] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[1, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[7, 40] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}}, {{
+      0.03125, 0.195}, {0.026759720234204146`, 0.18118033988749893`}, {
+      0.012228869674096927`, 0.18118033988749893`}, {0.02398457471994639, 
+      0.17263932022500209`}, {0.01949429495415054, 0.15881966011250104`}, {
+      0.03125, 0.16736067977499788`}, {0.04300570504584946, 
+      0.15881966011250104`}, {0.03851542528005361, 0.17263932022500209`}, {
+      0.05027113032590307, 0.18118033988749893`}, {0.03574027976579586, 
+      0.18118033988749893`}}]], 
+    PolygonBox[
+     NCache[{{Rational[3, 32], Rational[39, 200]}, {
+       Rational[3, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[7, 40] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[3, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[7, 40] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[3, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[7, 40] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[3, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[7, 40] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[3, 32], Rational[7, 40] + 
+        Rational[-1, 50]/(1 + GoldenRatio)}, {
+       Rational[3, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[7, 40] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[3, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[7, 40] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[3, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[7, 40] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[3, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[7, 40] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}}, {{
+      0.09375, 0.195}, {0.08925972023420414, 0.18118033988749893`}, {
+      0.07472886967409692, 0.18118033988749893`}, {0.08648457471994639, 
+      0.17263932022500209`}, {0.08199429495415053, 0.15881966011250104`}, {
+      0.09375, 0.16736067977499788`}, {0.10550570504584947`, 
+      0.15881966011250104`}, {0.10101542528005361`, 0.17263932022500209`}, {
+      0.11277113032590308`, 0.18118033988749893`}, {0.09824027976579586, 
+      0.18118033988749893`}}]], 
+    PolygonBox[
+     NCache[{{Rational[3, 32], Rational[29, 200]}, {
+       Rational[3, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[1, 8] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[3, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[1, 8] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[3, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[1, 8] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[3, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[1, 8] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[3, 32], Rational[1, 8] + 
+        Rational[-1, 50]/(1 + GoldenRatio)}, {
+       Rational[3, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[1, 8] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[3, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[1, 8] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[3, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[1, 8] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[3, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[1, 8] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}}, {{
+      0.09375, 0.145}, {0.08925972023420414, 0.13118033988749894`}, {
+      0.07472886967409692, 0.13118033988749894`}, {0.08648457471994639, 
+      0.1226393202250021}, {0.08199429495415053, 0.10881966011250105`}, {
+      0.09375, 0.1173606797749979}, {0.10550570504584947`, 
+      0.10881966011250105`}, {0.10101542528005361`, 0.1226393202250021}, {
+      0.11277113032590308`, 0.13118033988749894`}, {0.09824027976579586, 
+      0.13118033988749894`}}]], 
+    PolygonBox[
+     NCache[{{Rational[5, 32], Rational[39, 200]}, {
+       Rational[5, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[7, 40] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[5, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[7, 40] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[5, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[7, 40] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[5, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[7, 40] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[5, 32], Rational[7, 40] + 
+        Rational[-1, 50]/(1 + GoldenRatio)}, {
+       Rational[5, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[7, 40] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[5, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[7, 40] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[5, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[7, 40] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[5, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[7, 40] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}}, {{
+      0.15625, 0.195}, {0.15175972023420414`, 0.18118033988749893`}, {
+      0.13722886967409692`, 0.18118033988749893`}, {0.1489845747199464, 
+      0.17263932022500209`}, {0.14449429495415053`, 0.15881966011250104`}, {
+      0.15625, 0.16736067977499788`}, {0.16800570504584947`, 
+      0.15881966011250104`}, {0.1635154252800536, 0.17263932022500209`}, {
+      0.17527113032590308`, 0.18118033988749893`}, {0.16074027976579586`, 
+      0.18118033988749893`}}]], 
+    PolygonBox[
+     NCache[{{Rational[5, 32], Rational[29, 200]}, {
+       Rational[5, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[1, 8] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[5, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[1, 8] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[5, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[1, 8] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[5, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[1, 8] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[5, 32], Rational[1, 8] + 
+        Rational[-1, 50]/(1 + GoldenRatio)}, {
+       Rational[5, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[1, 8] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[5, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[1, 8] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[5, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[1, 8] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[5, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[1, 8] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}}, {{
+      0.15625, 0.145}, {0.15175972023420414`, 0.13118033988749894`}, {
+      0.13722886967409692`, 0.13118033988749894`}, {0.1489845747199464, 
+      0.1226393202250021}, {0.14449429495415053`, 0.10881966011250105`}, {
+      0.15625, 0.1173606797749979}, {0.16800570504584947`, 
+      0.10881966011250105`}, {0.1635154252800536, 0.1226393202250021}, {
+      0.17527113032590308`, 0.13118033988749894`}, {0.16074027976579586`, 
+      0.13118033988749894`}}]], 
+    PolygonBox[
+     NCache[{{Rational[5, 32], Rational[19, 200]}, {
+       Rational[5, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[3, 40] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[5, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[3, 40] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[5, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[3, 40] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[5, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[3, 40] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[5, 32], Rational[3, 40] + 
+        Rational[-1, 50]/(1 + GoldenRatio)}, {
+       Rational[5, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[3, 40] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[5, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[3, 40] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[5, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[3, 40] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[5, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[3, 40] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}}, {{
+      0.15625, 0.095}, {0.15175972023420414`, 0.08118033988749894}, {
+      0.13722886967409692`, 0.08118033988749895}, {0.1489845747199464, 
+      0.0726393202250021}, {0.14449429495415053`, 0.058819660112501046`}, {
+      0.15625, 0.06736067977499789}, {0.16800570504584947`, 
+      0.058819660112501046`}, {0.1635154252800536, 0.0726393202250021}, {
+      0.17527113032590308`, 0.08118033988749895}, {0.16074027976579586`, 
+      0.08118033988749894}}]], 
+    PolygonBox[
+     NCache[{{Rational[7, 32], Rational[39, 200]}, {
+       Rational[7, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[7, 40] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[7, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[7, 40] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[7, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[7, 40] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[7, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[7, 40] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[7, 32], Rational[7, 40] + 
+        Rational[-1, 50]/(1 + GoldenRatio)}, {
+       Rational[7, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[7, 40] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[7, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[7, 40] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[7, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[7, 40] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[7, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[7, 40] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}}, {{
+      0.21875, 0.195}, {0.21425972023420414`, 0.18118033988749893`}, {
+      0.19972886967409692`, 0.18118033988749893`}, {0.2114845747199464, 
+      0.17263932022500209`}, {0.20699429495415053`, 0.15881966011250104`}, {
+      0.21875, 0.16736067977499788`}, {0.23050570504584947`, 
+      0.15881966011250104`}, {0.2260154252800536, 0.17263932022500209`}, {
+      0.23777113032590308`, 0.18118033988749893`}, {0.22324027976579586`, 
+      0.18118033988749893`}}]], 
+    PolygonBox[
+     NCache[{{Rational[7, 32], Rational[29, 200]}, {
+       Rational[7, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[1, 8] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[7, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[1, 8] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[7, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[1, 8] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[7, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[1, 8] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[7, 32], Rational[1, 8] + 
+        Rational[-1, 50]/(1 + GoldenRatio)}, {
+       Rational[7, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[1, 8] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[7, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[1, 8] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[7, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[1, 8] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[7, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[1, 8] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}}, {{
+      0.21875, 0.145}, {0.21425972023420414`, 0.13118033988749894`}, {
+      0.19972886967409692`, 0.13118033988749894`}, {0.2114845747199464, 
+      0.1226393202250021}, {0.20699429495415053`, 0.10881966011250105`}, {
+      0.21875, 0.1173606797749979}, {0.23050570504584947`, 
+      0.10881966011250105`}, {0.2260154252800536, 0.1226393202250021}, {
+      0.23777113032590308`, 0.13118033988749894`}, {0.22324027976579586`, 
+      0.13118033988749894`}}]], 
+    PolygonBox[
+     NCache[{{Rational[7, 32], Rational[19, 200]}, {
+       Rational[7, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[3, 40] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[7, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[3, 40] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[7, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[3, 40] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[7, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[3, 40] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[7, 32], Rational[3, 40] + 
+        Rational[-1, 50]/(1 + GoldenRatio)}, {
+       Rational[7, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[3, 40] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[7, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[3, 40] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[7, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[3, 40] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[7, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[3, 40] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}}, {{
+      0.21875, 0.095}, {0.21425972023420414`, 0.08118033988749894}, {
+      0.19972886967409692`, 0.08118033988749895}, {0.2114845747199464, 
+      0.0726393202250021}, {0.20699429495415053`, 0.058819660112501046`}, {
+      0.21875, 0.06736067977499789}, {0.23050570504584947`, 
+      0.058819660112501046`}, {0.2260154252800536, 0.0726393202250021}, {
+      0.23777113032590308`, 0.08118033988749895}, {0.22324027976579586`, 
+      0.08118033988749894}}]], 
+    PolygonBox[
+     NCache[{{Rational[7, 32], Rational[9, 200]}, {
+       Rational[7, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[1, 40] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[7, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[1, 40] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[7, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[1, 40] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[7, 32] + 
+        Rational[-1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[1, 40] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[7, 32], Rational[1, 40] + 
+        Rational[-1, 50]/(1 + GoldenRatio)}, {
+       Rational[7, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[1, 40] + 
+        Rational[1, 200] (-1 - 5^Rational[1, 2])}, {
+       Rational[7, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[1, 40] + 
+        Rational[1, 200] (1 - 5^Rational[1, 2])/(1 + GoldenRatio)}, {
+       Rational[7, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+          Rational[1, 2], Rational[1, 40] + 
+        Rational[1, 200] (-1 + 5^Rational[1, 2])}, {
+       Rational[7, 32] + 
+        Rational[1, 50] (Rational[5, 8] + Rational[-1, 8] 5^Rational[1, 2])^
+          Rational[1, 2]/(1 + GoldenRatio), Rational[1, 40] + 
+        Rational[1, 200] (1 + 5^Rational[1, 2])/(1 + GoldenRatio)}}, {{
+      0.21875, 0.045}, {0.21425972023420414`, 0.03118033988749895}, {
+      0.19972886967409692`, 0.03118033988749895}, {0.2114845747199464, 
+      0.022639320225002105`}, {0.20699429495415053`, 0.008819660112501054}, {
+      0.21875, 0.017360679774997896`}, {0.23050570504584947`, 
+      0.008819660112501054}, {0.2260154252800536, 0.022639320225002105`}, {
+      0.23777113032590308`, 0.03118033988749895}, {0.22324027976579586`, 
+      0.03118033988749895}}]]}},
+  ImageSize->{520.5, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.9330781361999817`*^9, {3.933078288043663*^9, 3.9330783384654837`*^9}, {
+   3.9330783806186495`*^9, 3.933078405526003*^9}, {3.933078488810893*^9, 
+   3.933078506764121*^9}, {3.9330786090733414`*^9, 3.93307861462794*^9}, {
+   3.933078664680829*^9, 3.933078695767528*^9}, {3.933078813502664*^9, 
+   3.9330788211195354`*^9}, {3.933078856366678*^9, 3.9330788670980577`*^9}, 
+   3.933084383944827*^9, {3.9330845083224287`*^9, 3.933084524144925*^9}, 
+   3.9330846972352343`*^9, {3.933084752884703*^9, 3.933084776887989*^9}, 
+   3.933085209050215*^9, {3.933085500379154*^9, 3.9330855443929567`*^9}, {
+   3.93308572832165*^9, 3.933085735991324*^9}, {3.933085779693188*^9, 
+   3.9330857837028446`*^9}, {3.9330858225287743`*^9, 3.93308583801225*^9}, {
+   3.9330858897927713`*^9, 3.933085901347967*^9}, {3.9330860959990234`*^9, 
+   3.9330861169429708`*^9}, 3.933086215261466*^9, {3.9330862515863805`*^9, 
+   3.933086255945149*^9}, {3.93308631646259*^9, 3.9330863660839043`*^9}, {
+   3.9330868014503064`*^9, 3.933086804503543*^9}, 3.933086840971021*^9, {
+   3.933086900703394*^9, 3.9330869261040134`*^9}, 3.933086964820196*^9, {
+   3.9330870045431566`*^9, 3.933087046660872*^9}, 3.93308707700877*^9, {
+   3.9330871126074367`*^9, 3.9330871178909235`*^9}, 3.9330871506266713`*^9, {
+   3.933087324011566*^9, 3.933087339245225*^9}, {3.9330874955061026`*^9, 
+   3.933087516294959*^9}, 3.9330876309210186`*^9, {3.9330877725023937`*^9, 
+   3.933087822178336*^9}, 3.933087901348626*^9, 3.933087942440195*^9, 
+   3.9330881617611623`*^9, 3.9330883651512413`*^9, {3.9330883977272177`*^9, 
+   3.9330884040804553`*^9}, 3.9330885531748247`*^9, {3.933088620927594*^9, 
+   3.9330886625464516`*^9}, {3.9330888572318087`*^9, 3.933088864157709*^9}, 
+   3.933088987471569*^9, {3.933089021033568*^9, 3.933089039721099*^9}, {
+   3.9330891728777485`*^9, 3.9330892231608467`*^9}, {3.9330892688855276`*^9, 
+   3.933089275676021*^9}, 3.933089438257991*^9, {3.9330894911440306`*^9, 
+   3.9330895529852304`*^9}, 3.933089591274815*^9, 3.933089649053211*^9},
+ CellLabel->
+  "Out[2148]=",ExpressionUUID->"cdfe8915-8b36-4619-aade-05502b549451"]
+}, Open  ]]
+},
+WindowSize->{1440., 741.75},
+WindowMargins->{{-6, Automatic}, {Automatic, -6}},
+FrontEndVersion->"13.2 for Microsoft Windows (64-bit) (January 30, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"87a04fe5-85d2-466c-a162-5f728206eaaa"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 11525, 291, 504, "Input",ExpressionUUID->"95eeb980-b7da-442a-bd5c-875524e79644"],
+Cell[12108, 315, 2273, 36, 69, "Output",ExpressionUUID->"536c7ccf-3ff7-4747-a432-0de05f6d3e72"],
+Cell[14384, 353, 2283, 36, 62, "Output",ExpressionUUID->"9b1a0638-1a90-42fe-a3d8-12a1bd43c41c"],
+Cell[16670, 391, 53043, 966, 350, "Output",ExpressionUUID->"cdfe8915-8b36-4619-aade-05502b549451"]
+}, Open  ]]
+}
+]
+*)
+

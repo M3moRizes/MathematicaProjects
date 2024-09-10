@@ -1,0 +1,426 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     18979,        416]
+NotebookOptionsPosition[     18488,        399]
+NotebookOutlinePosition[     18894,        415]
+CellTagsIndexPosition[     18851,        412]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Ep", "=", 
+   RowBox[{"List", "[", 
+    RowBox[{
+    "\"\<Mathematics\>\"", ",", "\"\<Logic\>\"", ",", "\"\<Philosophy\>\"", 
+     ",", "\"\<Ethics\>\"", ",", "\"\<Morality\>\"", ",", "\"\<Physics\>\"", 
+     ",", "\"\<Chemistry\>\"", ",", "\"\<Biology\>\"", ",", 
+     "\"\<Mechanics\>\"", ",", "\"\<Astronomy\>\"", ",", "\"\<Psychology\>\"",
+      ",", "\"\<Sociology\>\"", ",", "\"\<Politics\>\"", ",", 
+     "\"\<Economics\>\"", ",", "\"\<History\>\"", ",", "\"\<Anthropology\>\"",
+      ",", "\"\<Etymology\>\"", ",", "\"\<Linguistics\>\"", ",", 
+     "\"\<Geology\>\"", ",", "\"\<Geography\>\"", ",", "\"\<Theology\>\"", 
+     ",", "\"\<Aesthetics\>\"", ",", "\"\<Rhetoric\>\"", ",", 
+     "\"\<Informatics\>\""}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Connections", "=", 
+   RowBox[{"List", "[", 
+    RowBox[{
+     RowBox[{"\"\<Mathematics\>\"", "\[UndirectedEdge]", "\"\<Logic\>\""}], 
+     ",", 
+     RowBox[{
+     "\"\<Mathematics\>\"", "\[UndirectedEdge]", "\"\<Philosophy\>\""}], ",", 
+     RowBox[{"\"\<Mathematics\>\"", "\[UndirectedEdge]", "\"\<Physics\>\""}], 
+     ",", 
+     RowBox[{
+     "\"\<Mathematics\>\"", "\[UndirectedEdge]", "\"\<Economics\>\""}], ",", 
+     RowBox[{
+     "\"\<Mathematics\>\"", "\[UndirectedEdge]", "\"\<Informatics\>\""}], ",", 
+     RowBox[{"\"\<Logic\>\"", "\[UndirectedEdge]", "\"\<Philosophy\>\""}], 
+     ",", 
+     RowBox[{"\"\<Logic\>\"", "\[UndirectedEdge]", "\"\<Ethics\>\""}], ",", 
+     RowBox[{"\"\<Logic\>\"", "\[UndirectedEdge]", "\"\<Rhetoric\>\""}], ",", 
+     RowBox[{"\"\<Logic\>\"", "\[UndirectedEdge]", "\"\<Informatics\>\""}], 
+     ",", 
+     RowBox[{"\"\<Philosophy\>\"", "\[UndirectedEdge]", "\"\<Ethics\>\""}], 
+     ",", 
+     RowBox[{"\"\<Philosophy\>\"", "\[UndirectedEdge]", "\"\<Morality\>\""}], 
+     ",", 
+     RowBox[{"\"\<Philosophy\>\"", "\[UndirectedEdge]", "\"\<Physics\>\""}], 
+     ",", 
+     RowBox[{"\"\<Philosophy\>\"", "\[UndirectedEdge]", "\"\<Politics\>\""}], 
+     ",", 
+     RowBox[{"\"\<Philosophy\>\"", "\[UndirectedEdge]", "\"\<Theology\>\""}], 
+     ",", 
+     RowBox[{"\"\<Ethics\>\"", "\[UndirectedEdge]", "\"\<Morality\>\""}], ",", 
+     RowBox[{"\"\<Ethics\>\"", "\[UndirectedEdge]", "\"\<Sociology\>\""}], 
+     ",", 
+     RowBox[{"\"\<Ethics\>\"", "\[UndirectedEdge]", "\"\<Politics\>\""}], ",", 
+     RowBox[{"\"\<Ethics\>\"", "\[UndirectedEdge]", "\"\<Theology\>\""}], ",", 
+     RowBox[{"\"\<Morality\>\"", "\[UndirectedEdge]", "\"\<Psychology\>\""}], 
+     ",", 
+     RowBox[{"\"\<Morality\>\"", "\[UndirectedEdge]", "\"\<Politics\>\""}], 
+     ",", 
+     RowBox[{"\"\<Morality\>\"", "\[UndirectedEdge]", "\"\<Theology\>\""}], 
+     ",", 
+     RowBox[{"\"\<Physics\>\"", "\[UndirectedEdge]", "\"\<Chemistry\>\""}], 
+     ",", 
+     RowBox[{"\"\<Physics\>\"", "\[UndirectedEdge]", "\"\<Mechanics\>\""}], 
+     ",", 
+     RowBox[{"\"\<Physics\>\"", "\[UndirectedEdge]", "\"\<Astronomy\>\""}], 
+     ",", 
+     RowBox[{"\"\<Chemistry\>\"", "\[UndirectedEdge]", "\"\<Biology\>\""}], 
+     ",", 
+     RowBox[{"\"\<Chemistry\>\"", "\[UndirectedEdge]", "\"\<Psychology\>\""}],
+      ",", 
+     RowBox[{"\"\<Chemistry\>\"", "\[UndirectedEdge]", "\"\<Geology\>\""}], 
+     ",", 
+     RowBox[{"\"\<Biology\>\"", "\[UndirectedEdge]", "\"\<Psychology\>\""}], 
+     ",", 
+     RowBox[{"\"\<Biology\>\"", "\[UndirectedEdge]", "\"\<Anthropology\>\""}],
+      ",", 
+     RowBox[{"\"\<Mechanics\>\"", "\[UndirectedEdge]", "\"\<Astronomy\>\""}], 
+     ",", 
+     RowBox[{"\"\<Mechanics\>\"", "\[UndirectedEdge]", "\"\<Geology\>\""}], 
+     ",", 
+     RowBox[{
+     "\"\<Mechanics\>\"", "\[UndirectedEdge]", "\"\<Informatics\>\""}], ",", 
+     RowBox[{"\"\<Astronomy\>\"", "\[UndirectedEdge]", "\"\<Geology\>\""}], 
+     ",", 
+     RowBox[{"\"\<Astronomy\>\"", "\[UndirectedEdge]", "\"\<Theology\>\""}], 
+     ",", 
+     RowBox[{"\"\<Psychology\>\"", "\[UndirectedEdge]", "\"\<Sociology\>\""}],
+      ",", 
+     RowBox[{"\"\<Psychology\>\"", "\[UndirectedEdge]", "\"\<Economics\>\""}],
+      ",", 
+     RowBox[{
+     "\"\<Psychology\>\"", "\[UndirectedEdge]", "\"\<Anthropology\>\""}], ",", 
+     RowBox[{"\"\<Psychology\>\"", "\[UndirectedEdge]", "\"\<Theology\>\""}], 
+     ",", 
+     RowBox[{
+     "\"\<Psychology\>\"", "\[UndirectedEdge]", "\"\<Aesthetics\>\""}], ",", 
+     RowBox[{"\"\<Psychology\>\"", "\[UndirectedEdge]", "\"\<Rhetoric\>\""}], 
+     ",", 
+     RowBox[{"\"\<Sociology\>\"", "\[UndirectedEdge]", "\"\<Politics\>\""}], 
+     ",", 
+     RowBox[{"\"\<Sociology\>\"", "\[UndirectedEdge]", "\"\<Economics\>\""}], 
+     ",", 
+     RowBox[{"\"\<Sociology\>\"", "\[UndirectedEdge]", "\"\<History\>\""}], 
+     ",", 
+     RowBox[{
+     "\"\<Sociology\>\"", "\[UndirectedEdge]", "\"\<Anthropology\>\""}], ",", 
+     RowBox[{"\"\<Sociology\>\"", "\[UndirectedEdge]", "\"\<Etymology\>\""}], 
+     ",", 
+     RowBox[{
+     "\"\<Sociology\>\"", "\[UndirectedEdge]", "\"\<Linguistics\>\""}], ",", 
+     RowBox[{"\"\<Sociology\>\"", "\[UndirectedEdge]", "\"\<Geography\>\""}], 
+     ",", 
+     RowBox[{"\"\<Sociology\>\"", "\[UndirectedEdge]", "\"\<Theology\>\""}], 
+     ",", 
+     RowBox[{"\"\<Sociology\>\"", "\[UndirectedEdge]", "\"\<Aesthetics\>\""}],
+      ",", 
+     RowBox[{"\"\<Sociology\>\"", "\[UndirectedEdge]", "\"\<Rhetoric\>\""}], 
+     ",", 
+     RowBox[{"\"\<Politics\>\"", "\[UndirectedEdge]", "\"\<Economics\>\""}], 
+     ",", 
+     RowBox[{"\"\<Politics\>\"", "\[UndirectedEdge]", "\"\<History\>\""}], 
+     ",", 
+     RowBox[{"\"\<Politics\>\"", "\[UndirectedEdge]", "\"\<Geography\>\""}], 
+     ",", 
+     RowBox[{"\"\<Politics\>\"", "\[UndirectedEdge]", "\"\<Theology\>\""}], 
+     ",", 
+     RowBox[{"\"\<Politics\>\"", "\[UndirectedEdge]", "\"\<Rhetoric\>\""}], 
+     ",", 
+     RowBox[{
+     "\"\<Economics\>\"", "\[UndirectedEdge]", "\"\<Anthropology\>\""}], ",", 
+     RowBox[{"\"\<Economics\>\"", "\[UndirectedEdge]", "\"\<Geography\>\""}], 
+     ",", 
+     RowBox[{"\"\<History\>\"", "\[UndirectedEdge]", "\"\<Anthropology\>\""}],
+      ",", 
+     RowBox[{"\"\<History\>\"", "\[UndirectedEdge]", "\"\<Etymology\>\""}], 
+     ",", 
+     RowBox[{"\"\<History\>\"", "\[UndirectedEdge]", "\"\<Geology\>\""}], ",", 
+     RowBox[{"\"\<History\>\"", "\[UndirectedEdge]", "\"\<Geography\>\""}], 
+     ",", 
+     RowBox[{"\"\<History\>\"", "\[UndirectedEdge]", "\"\<Theology\>\""}], 
+     ",", 
+     RowBox[{
+     "\"\<Anthropology\>\"", "\[UndirectedEdge]", "\"\<Etymology\>\""}], ",", 
+     RowBox[{
+     "\"\<Anthropology\>\"", "\[UndirectedEdge]", "\"\<Linguistics\>\""}], 
+     ",", 
+     RowBox[{
+     "\"\<Anthropology\>\"", "\[UndirectedEdge]", "\"\<Geography\>\""}], ",", 
+     RowBox[{
+     "\"\<Anthropology\>\"", "\[UndirectedEdge]", "\"\<Theology\>\""}], ",", 
+     RowBox[{
+     "\"\<Anthropology\>\"", "\[UndirectedEdge]", "\"\<Aesthetics\>\""}], ",", 
+     RowBox[{
+     "\"\<Etymology\>\"", "\[UndirectedEdge]", "\"\<Linguistics\>\""}], ",", 
+     RowBox[{"\"\<Etymology\>\"", "\[UndirectedEdge]", "\"\<Geography\>\""}], 
+     ",", 
+     RowBox[{
+     "\"\<Linguistics\>\"", "\[UndirectedEdge]", "\"\<Aesthetics\>\""}], ",", 
+     RowBox[{"\"\<Linguistics\>\"", "\[UndirectedEdge]", "\"\<Rhetoric\>\""}],
+      ",", 
+     RowBox[{
+     "\"\<Linguistics\>\"", "\[UndirectedEdge]", "\"\<Informatics\>\""}], ",", 
+     RowBox[{"\"\<Geology\>\"", "\[UndirectedEdge]", "\"\<Geography\>\""}], 
+     ",", 
+     RowBox[{
+     "\"\<Aesthetics\>\"", "\[UndirectedEdge]", "\"\<Rhetoric\>\""}]}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Graph", "[", 
+  RowBox[{"Connections", ",", 
+   RowBox[{"VertexLabels", "->", "Automatic"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.918554037839136*^9, 3.918554038358593*^9}, {
+  3.918554094828924*^9, 3.918554145403762*^9}, {3.918554205167272*^9, 
+  3.91855463402563*^9}, {3.918554721860772*^9, 3.9185547546018286`*^9}, {
+  3.9185547882897243`*^9, 3.918554967149282*^9}, {3.918555002413415*^9, 
+  3.9185550145013237`*^9}, {3.9185550530251646`*^9, 3.9185550628848495`*^9}, {
+  3.9185551021086874`*^9, 3.918555201734589*^9}, {3.9185552904035993`*^9, 
+  3.918555762271985*^9}, {3.9185558051924305`*^9, 3.918555930119231*^9}, {
+  3.918555975287674*^9, 3.9185560637107906`*^9}, {3.918556108951434*^9, 
+  3.918556113145589*^9}, {3.918556152606514*^9, 3.9185561596758795`*^9}, {
+  3.9185561964475603`*^9, 3.918556220968855*^9}, {3.918556282318596*^9, 
+  3.9185562994147615`*^9}, {3.9185564059971695`*^9, 3.91855660868712*^9}, {
+  3.918556791556065*^9, 3.9185567916683664`*^9}},
+ CellLabel->"In[23]:=",ExpressionUUID->"d556cd80-a5cb-40aa-a7d7-f2632a088633"],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{
+      "Mathematics", "Logic", "Philosophy", "Physics", "Economics", 
+       "Informatics", "Ethics", "Rhetoric", "Morality", "Politics", 
+       "Theology", "Sociology", "Psychology", "Chemistry", "Mechanics", 
+       "Astronomy", "Biology", "Geology", "Anthropology", "Aesthetics", 
+       "History", "Etymology", "Linguistics", "Geography"}, {
+      Null, {{1, 2}, {1, 3}, {1, 4}, {1, 5}, {1, 6}, {2, 3}, {2, 7}, {2, 8}, {
+       2, 6}, {3, 7}, {3, 9}, {3, 4}, {3, 10}, {3, 11}, {7, 9}, {7, 12}, {7, 
+       10}, {7, 11}, {9, 13}, {9, 10}, {9, 11}, {4, 14}, {4, 15}, {4, 16}, {
+       14, 17}, {14, 13}, {14, 18}, {17, 13}, {17, 19}, {15, 16}, {15, 18}, {
+       15, 6}, {16, 18}, {16, 11}, {13, 12}, {13, 5}, {13, 19}, {13, 11}, {13,
+        20}, {13, 8}, {12, 10}, {12, 5}, {12, 21}, {12, 19}, {12, 22}, {12, 
+       23}, {12, 24}, {12, 11}, {12, 20}, {12, 8}, {10, 5}, {10, 21}, {10, 
+       24}, {10, 11}, {10, 8}, {5, 19}, {5, 24}, {21, 19}, {21, 22}, {21, 
+       18}, {21, 24}, {21, 11}, {19, 22}, {19, 23}, {19, 24}, {19, 11}, {19, 
+       20}, {22, 23}, {22, 24}, {23, 20}, {23, 8}, {23, 6}, {18, 24}, {20, 
+       8}}}, {VertexLabels -> {Automatic}}]]}, 
+    TagBox[GraphicsGroupBox[{
+       {Hue[0.6, 0.7, 0.5], Opacity[0.7], Arrowheads[0.], 
+        ArrowBox[CompressedData["
+1:eJyF1FtI01EcwPH5nzIvEfkQDSpcMEyKIsqwh9U5wspKQVgXIsrSsrCgDMTI
+Iboy15PQm04f0ppdiEBno0grKCRKo8QZRGNeCpZmc25abqT1YC/f8+Dg//T5
+n9/53fZfV3LRVqrX6XT7/z3a4lPe6R/sajfIaH/FqblrQfHsd33VvdwEqVv8
+0SMTRV1tIU0OmE5ujOSNCrpZ3/k0cUOKTCwbujphjyt+aM0tp7suLg6c/9Nd
+VhFTvLB0U7TcrZeffXk7InenlXx4P32p85miduW507+E0exxFH/vVbzNsuLx
+wfSgKGnOMRRsG1HqZX10xqcney/7q5fHhHeyJ/tTx7Di0cxvvtztM6Ix64HR
+d2xK8Y6m1Yd/6uMiOFfQGOiOKvn4vxS9PO7Wyfkz6baSAoNU8r3donmOpMmY
+o9UtkjXFY6Pa+FSSQb55GL6554ImOS/mR88uTBvz28fF0OaA/mggqnjqjYbd
+W9xhYXbdtzivxxX/GN/pq24eEy1Zq4pfDSwonjFoWch4FxZXTIHa/vea5LxZ
+H3023xqy3hkRxrUNH2pezyjz4nzorJ/O+dDZH+4b49OXOs/+0v/veeXZJ6HZ
+fdOKsz/sB/Ojs34682M8nqezfnrdj70RhwiLXOfWKrdLJ+ncH97H+HTmT+f/
+h879pjN/5sP76YxP5/zpS91van++PrXSK3LyPa3iRILi3B86+896+P2iTzZd
+inx9FBLDvX1vU9qTFWf9dNbP+xifXv/COm9fpkmbq69mlyFJ8nvD+dN5nu/T
+mQ/r4/ucH539Zzz2h874dO4HnftBZ37Mh+eZD++nMz7fZ3w6z/8Fm+t6Zw==
+
+         "], 0.033166038095965175`]}, 
+       {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[
+        0.7]}], {
+         DiskBox[{2.9563995962292253, 0.766110128641627}, 
+          0.033166038095965175], 
+         InsetBox["\<\"Mathematics\"\>", 
+          Offset[{2, 2}, {2.9895656343251904, 0.7992761667375922}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{2.157059628719336, 0.}, 0.033166038095965175], 
+         InsetBox["\<\"Logic\"\>", 
+          Offset[{2, 2}, {2.190225666815301, 0.033166038095965175}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{2.3670095530956075, 0.5712829444101095}, 
+          0.033166038095965175], 
+         InsetBox["\<\"Philosophy\"\>", 
+          Offset[{2, 2}, {2.4001755911915725, 0.6044489825060747}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{3.1455168254327805, 1.7177538977471736}, 
+          0.033166038095965175], 
+         InsetBox["\<\"Physics\"\>", 
+          Offset[{2, 2}, {3.1786828635287456, 1.7509199358431387}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{1.7198844240063142, 1.653421152345534}, 
+          0.033166038095965175], 
+         InsetBox["\<\"Economics\"\>", 
+          Offset[{2, 2}, {1.7530504621022793, 1.686587190441499}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{2.4557818485597305, 1.1660034368954855}, 
+          0.033166038095965175], 
+         InsetBox["\<\"Informatics\"\>", 
+          Offset[{2, 2}, {2.4889478866556956, 1.1991694749914505}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{1.46201523207487, 0.17899721940037305}, 
+          0.033166038095965175], 
+         InsetBox["\<\"Ethics\"\>", 
+          Offset[{2, 2}, {1.4951812701708351, 0.21216325749633824}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{0.7521155868906997, 0.5375118390046334}, 
+          0.033166038095965175], 
+         InsetBox["\<\"Rhetoric\"\>", 
+          Offset[{2, 2}, {0.7852816249866649, 0.5706778771005986}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{1.628538003070732, 0.5217090635409736}, 
+          0.033166038095965175], 
+         InsetBox["\<\"Morality\"\>", 
+          Offset[{2, 2}, {1.661704041166697, 0.5548751016369388}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{1.3255022387770028, 1.0226641620124948}, 
+          0.033166038095965175], 
+         InsetBox["\<\"Politics\"\>", 
+          Offset[{2, 2}, {1.3586682768729679, 1.0558302001084598}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{1.6884597171389084, 1.296111674236835}, 
+          0.033166038095965175], 
+         InsetBox["\<\"Theology\"\>", 
+          Offset[{2, 2}, {1.7216257552348735, 1.3292777123328001}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{0.8276204523521984, 1.3045292044870869}, 
+          0.033166038095965175], 
+         InsetBox["\<\"Sociology\"\>", 
+          Offset[{2, 2}, {0.8607864904481636, 1.337695242583052}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{1.102829238611323, 1.7200996751431683}, 
+          0.033166038095965175], 
+         InsetBox["\<\"Psychology\"\>", 
+          Offset[{2, 2}, {1.135995276707288, 1.7532657132391334}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{2.0807452229451955, 2.9122969066200985}, 
+          0.033166038095965175], 
+         InsetBox["\<\"Chemistry\"\>", 
+          Offset[{2, 2}, {2.1139112610411606, 2.9454629447160636}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{3.418310184865271, 2.254027647010159}, 
+          0.033166038095965175], 
+         InsetBox["\<\"Mechanics\"\>", 
+          Offset[{2, 2}, {3.451476222961236, 2.287193685106124}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{2.8779009134417466, 2.3038455392721495}, 
+          0.033166038095965175], 
+         InsetBox["\<\"Astronomy\"\>", 
+          Offset[{2, 2}, {2.9110669515377117, 2.3370115773681146}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{0.9900994066963996, 3.0810733646147668}, 
+          0.033166038095965175], 
+         InsetBox["\<\"Biology\"\>", 
+          Offset[{2, 2}, {1.0232654447923648, 3.114239402710732}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{2.2560958733301417, 2.628537176543696}, 
+          0.033166038095965175], 
+         InsetBox["\<\"Geology\"\>", 
+          Offset[{2, 2}, {2.289261911426107, 2.661703214639661}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{0.6127309002766826, 1.9889558594318606}, 
+          0.033166038095965175], 
+         InsetBox["\<\"Anthropology\"\>", 
+          Offset[{2, 2}, {0.6458969383726478, 2.0221218975278257}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{0., 1.1430577625346507}, 0.033166038095965175], 
+         InsetBox["\<\"Aesthetics\"\>", 
+          Offset[{2, 2}, {0.033166038095965175, 1.1762238006306158}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{1.0780047896685412, 2.075510935465815}, 
+          0.033166038095965175], 
+         InsetBox["\<\"History\"\>", 
+          Offset[{2, 2}, {1.1111708277645063, 2.10867697356178}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{0.08773864240961204, 2.17150808647548}, 
+          0.033166038095965175], 
+         InsetBox["\<\"Etymology\"\>", 
+          Offset[{2, 2}, {0.12090468050557722, 2.204674124571445}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{0.5513024018458725, 1.3604734560665914}, 
+          0.033166038095965175], 
+         InsetBox["\<\"Linguistics\"\>", 
+          Offset[{2, 2}, {0.5844684399418377, 1.3936394941625565}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{1.1120910616130073, 2.350977904137889}, 
+          0.033166038095965175], 
+         InsetBox["\<\"Geography\"\>", 
+          Offset[{2, 2}, {1.1452570997089724, 2.384143942233854}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}}}],
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False]],
+  DefaultBaseStyle->"NetworkGraphics",
+  FormatType->TraditionalForm,
+  FrameTicks->None,
+  ImageSize->{708., Automatic}]], "Output",
+ CellChangeTimes->{
+  3.9185541186658273`*^9, 3.9185543677967196`*^9, {3.918554444196355*^9, 
+   3.9185544785382867`*^9}, {3.9185565696507*^9, 3.918556609138998*^9}, 
+   3.9185567921671352`*^9},
+ CellLabel->"Out[25]=",ExpressionUUID->"be9163fd-860f-4784-9d6e-56af0292f10c"]
+}, Open  ]]
+},
+WindowSize->{1440., 741.75},
+WindowMargins->{{-6, Automatic}, {Automatic, -6}},
+FrontEndVersion->"13.2 for Microsoft Windows (64-bit) (January 30, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"eaa0daa1-7e7b-4638-828d-3184270423b1"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 8583, 178, 314, "Input",ExpressionUUID->"d556cd80-a5cb-40aa-a7d7-f2632a088633"],
+Cell[9166, 202, 9306, 194, 625, "Output",ExpressionUUID->"be9163fd-860f-4784-9d6e-56af0292f10c"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

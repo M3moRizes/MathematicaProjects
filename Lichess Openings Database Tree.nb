@@ -1,0 +1,491 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     18027,        481]
+NotebookOptionsPosition[     17536,        464]
+NotebookOutlinePosition[     17942,        480]
+CellTagsIndexPosition[     17899,        477]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Tree", "[", 
+  RowBox[{"\"\<Lichess Openings Database\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Tree", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"\"\<e4\>\"", ",", "0.58", ",", "2650292502", ",", "0.02"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Tree", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+            "\"\<e5\>\"", ",", "0.38", ",", "1016284130", ",", "0.06"}], 
+            "}"}], ",", "None"}], "]"}], ",", 
+         RowBox[{"Tree", "[", 
+          RowBox[{",", "None"}], "]"}], ",", 
+         RowBox[{"Tree", "[", 
+          RowBox[{",", "None"}], "]"}], ",", 
+         RowBox[{"Tree", "[", 
+          RowBox[{",", "None"}], "]"}], ",", 
+         RowBox[{"Tree", "[", 
+          RowBox[{",", "None"}], "]"}], ",", 
+         RowBox[{"Tree", "[", 
+          RowBox[{",", "None"}], "]"}], ",", 
+         RowBox[{"Tree", "[", 
+          RowBox[{",", "None"}], "]"}], ",", 
+         RowBox[{"Tree", "[", 
+          RowBox[{",", "None"}], "]"}], ",", 
+         RowBox[{"Tree", "[", 
+          RowBox[{",", "None"}], "]"}], ",", 
+         RowBox[{"Tree", "[", 
+          RowBox[{",", "None"}], "]"}], ",", 
+         RowBox[{"Tree", "[", 
+          RowBox[{",", "None"}], "]"}]}], "}"}]}], "]"}], ",", 
+     RowBox[{"Tree", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"\"\<d4\>\"", ",", "0.26", ",", "1170404027", ",", "0.05"}], 
+        "}"}], ",", "None"}], "]"}], ",", 
+     RowBox[{"Tree", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"\"\<Nf3\>\"", ",", "0.04", ",", "163030396", ",", "0.07"}], 
+        "}"}], ",", "None"}], "]"}], ",", 
+     RowBox[{"Tree", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"\"\<c4\>\"", ",", "0.04", ",", "159869562", ",", "0.06"}], 
+        "}"}], ",", "None"}], "]"}], ",", 
+     RowBox[{"Tree", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"\"\<e3\>\"", ",", "0.02", ",", "90051602", ",", 
+         RowBox[{"-", "0.02"}]}], "}"}], ",", "None"}], "]"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Tree", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"\"\<g3\>\"", ",", "0.02", ",", "77437699", ",", "0.04"}], 
+        "}"}], ",", "None"}], "]"}], ",", 
+     RowBox[{"Tree", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"\"\<b3\>\"", ",", "0.02", ",", "72401290", ",", "0.04"}], 
+        "}"}], ",", "None"}], "]"}], ",", 
+     RowBox[{"Tree", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"\"\<f4\>\"", ",", "0.01", ",", "44479741", ",", "0.04"}], 
+        "}"}], ",", "None"}], "]"}], ",", 
+     RowBox[{"Tree", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"\"\<d3\>\"", ",", "0.01", ",", "39836757", ",", "0"}], "}"}],
+        ",", "None"}], "]"}], ",", 
+     RowBox[{"Tree", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"\"\<Nc3\>\"", ",", "0.01", ",", "25032174", ",", "0.02"}], 
+        "}"}], ",", "None"}], "]"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.918820019636894*^9, 3.9188200531900845`*^9}, {
+  3.9188201750388002`*^9, 3.918820180336904*^9}, {3.9188202186931753`*^9, 
+  3.9188202405946026`*^9}, {3.918820274453701*^9, 3.918820281885112*^9}, {
+  3.918820354438361*^9, 3.9188205650738525`*^9}, {3.918820618432372*^9, 
+  3.918820684376789*^9}, {3.918820813435811*^9, 3.918820893986718*^9}, {
+  3.918820933715943*^9, 3.9188209368705854`*^9}, {3.9188209779537125`*^9, 
+  3.918821080771575*^9}, {3.91882112668005*^9, 3.918821131093853*^9}, {
+  3.918821278129976*^9, 3.918821295357439*^9}, {3.9188213556336837`*^9, 
+  3.91882138324367*^9}, {3.918821422219508*^9, 
+  3.91882153288017*^9}},ExpressionUUID->"cac8d5f1-eaab-4b2c-bb99-\
+8bd4dbc889cf"],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["Trees",
+   DynamicModuleBox[{Typeset`tree = HoldComplete[
+     Tree["Lichess Openings Database", {
+       Tree[{"e4", 0.58, 2650292502, 0.02}, {
+         Tree[{"e5", 0.38, 1016284130, 0.06}, None]}], 
+       Tree[{"d4", 0.26, 1170404027, 0.05}, None], 
+       Tree[{"Nf3", 0.04, 163030396, 0.07}, None], 
+       Tree[{"c4", 0.04, 159869562, 0.06}, None], 
+       Tree[{"e3", 0.02, 90051602, -0.02}, None], 
+       Tree[{"g3", 0.02, 77437699, 0.04}, None], 
+       Tree[{"b3", 0.02, 72401290, 0.04}, None], 
+       Tree[{"f4", 0.01, 44479741, 0.04}, None], 
+       Tree[{"d3", 0.01, 39836757, 0}, None], 
+       Tree[{"Nc3", 0.01, 25032174, 0.02}, None]}]]}, 
+    NamespaceBox[{
+      {Hue[0.6, 0.7, 0.5], Opacity[0.7], Arrowheads[Medium], 
+       {RGBColor[0.6, 0.5882352941176471, 0.5529411764705883], 
+        AbsoluteThickness[1], 
+        LineBox[{{1.5434872662825794`, 0.8222753347314902}, {0., 
+         0.4111376673657451}}]}, 
+       {RGBColor[0.6, 0.5882352941176471, 0.5529411764705883], 
+        AbsoluteThickness[1], 
+        LineBox[{{1.5434872662825794`, 0.8222753347314902}, {
+         0.34299717028501764`, 0.4111376673657451}}]}, 
+       {RGBColor[0.6, 0.5882352941176471, 0.5529411764705883], 
+        AbsoluteThickness[1], 
+        LineBox[{{1.5434872662825794`, 0.8222753347314902}, {
+         0.6859943405700353, 0.4111376673657451}}]}, 
+       {RGBColor[0.6, 0.5882352941176471, 0.5529411764705883], 
+        AbsoluteThickness[1], 
+        LineBox[{{1.5434872662825794`, 0.8222753347314902}, {
+         1.028991510855053, 0.4111376673657451}}]}, 
+       {RGBColor[0.6, 0.5882352941176471, 0.5529411764705883], 
+        AbsoluteThickness[1], 
+        LineBox[{{1.5434872662825794`, 0.8222753347314902}, {
+         1.3719886811400706`, 0.4111376673657451}}]}, 
+       {RGBColor[0.6, 0.5882352941176471, 0.5529411764705883], 
+        AbsoluteThickness[1], 
+        LineBox[{{1.5434872662825794`, 0.8222753347314902}, {
+         1.7149858514250882`, 0.4111376673657451}}]}, 
+       {RGBColor[0.6, 0.5882352941176471, 0.5529411764705883], 
+        AbsoluteThickness[1], 
+        LineBox[{{1.5434872662825794`, 0.8222753347314902}, {
+         2.057983021710106, 0.4111376673657451}}]}, 
+       {RGBColor[0.6, 0.5882352941176471, 0.5529411764705883], 
+        AbsoluteThickness[1], 
+        LineBox[{{1.5434872662825794`, 0.8222753347314902}, {
+         2.4009801919951235`, 0.4111376673657451}}]}, 
+       {RGBColor[0.6, 0.5882352941176471, 0.5529411764705883], 
+        AbsoluteThickness[1], 
+        LineBox[{{1.5434872662825794`, 0.8222753347314902}, {
+         2.743977362280141, 0.4111376673657451}}]}, 
+       {RGBColor[0.6, 0.5882352941176471, 0.5529411764705883], 
+        AbsoluteThickness[1], 
+        LineBox[{{1.5434872662825794`, 0.8222753347314902}, {
+         3.0869745325651587`, 0.4111376673657451}}]}, 
+       {RGBColor[0.6, 0.5882352941176471, 0.5529411764705883], 
+        AbsoluteThickness[1], LineBox[{{0., 0.4111376673657451}, {0., 0.}}]}}, 
+      {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[0.7]}], 
+       TagBox[InsetBox[
+         FrameBox["\<\"Lichess Openings Database\"\>",
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameMargins->{{2, 2}, {1, 1}},
+          FrameStyle->Directive[
+            RGBColor[
+            0.4196078431372549, 0.6313725490196078, 0.4196078431372549], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->4,
+          StripOnInput->False], {1.5434872662825794, 0.8222753347314902}],
+        "DynamicName",
+        BoxID -> "VertexID$1"], 
+       TagBox[InsetBox[
+         FrameBox[
+          RowBox[{"{", 
+           
+           RowBox[{"\<\"e4\"\>", ",", "0.58`", ",", "2650292502", ",", 
+            "0.02`"}], "}"}],
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameMargins->{{2, 2}, {1, 1}},
+          FrameStyle->Directive[
+            RGBColor[
+            0.4196078431372549, 0.6313725490196078, 0.4196078431372549], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->4,
+          StripOnInput->False], {0., 0.4111376673657451}],
+        "DynamicName",
+        BoxID -> "VertexID$2"], 
+       TagBox[InsetBox[
+         FrameBox[
+          RowBox[{"{", 
+           
+           RowBox[{"\<\"e5\"\>", ",", "0.38`", ",", "1016284130", ",", 
+            "0.06`"}], "}"}],
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameMargins->{{2, 2}, {1, 1}},
+          FrameStyle->Directive[
+            RGBColor[
+            0.4196078431372549, 0.6313725490196078, 0.4196078431372549], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->0,
+          StripOnInput->False], {0., 0.}],
+        "DynamicName",
+        BoxID -> "VertexID$3"], 
+       TagBox[InsetBox[
+         FrameBox[
+          RowBox[{"{", 
+           
+           RowBox[{"\<\"d4\"\>", ",", "0.26`", ",", "1170404027", ",", 
+            "0.05`"}], "}"}],
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameMargins->{{2, 2}, {1, 1}},
+          FrameStyle->Directive[
+            RGBColor[
+            0.4196078431372549, 0.6313725490196078, 0.4196078431372549], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->0,
+          StripOnInput->False], {0.34299717028501764, 0.4111376673657451}],
+        "DynamicName",
+        BoxID -> "VertexID$4"], 
+       TagBox[InsetBox[
+         FrameBox[
+          RowBox[{"{", 
+           
+           RowBox[{"\<\"Nf3\"\>", ",", "0.04`", ",", "163030396", ",", 
+            "0.07`"}], "}"}],
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameMargins->{{2, 2}, {1, 1}},
+          FrameStyle->Directive[
+            RGBColor[
+            0.4196078431372549, 0.6313725490196078, 0.4196078431372549], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->0,
+          StripOnInput->False], {0.6859943405700353, 0.4111376673657451}],
+        "DynamicName",
+        BoxID -> "VertexID$5"], 
+       TagBox[InsetBox[
+         FrameBox[
+          RowBox[{"{", 
+           
+           RowBox[{"\<\"c4\"\>", ",", "0.04`", ",", "159869562", ",", 
+            "0.06`"}], "}"}],
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameMargins->{{2, 2}, {1, 1}},
+          FrameStyle->Directive[
+            RGBColor[
+            0.4196078431372549, 0.6313725490196078, 0.4196078431372549], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->0,
+          StripOnInput->False], {1.028991510855053, 0.4111376673657451}],
+        "DynamicName",
+        BoxID -> "VertexID$6"], 
+       TagBox[InsetBox[
+         FrameBox[
+          RowBox[{"{", 
+           RowBox[{"\<\"e3\"\>", ",", "0.02`", ",", "90051602", ",", 
+            RowBox[{"-", "0.02`"}]}], "}"}],
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameMargins->{{2, 2}, {1, 1}},
+          FrameStyle->Directive[
+            RGBColor[
+            0.4196078431372549, 0.6313725490196078, 0.4196078431372549], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->0,
+          StripOnInput->False], {1.3719886811400706, 0.4111376673657451}],
+        "DynamicName",
+        BoxID -> "VertexID$7"], 
+       TagBox[InsetBox[
+         FrameBox[
+          RowBox[{"{", 
+           
+           RowBox[{"\<\"g3\"\>", ",", "0.02`", ",", "77437699", ",", 
+            "0.04`"}], "}"}],
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameMargins->{{2, 2}, {1, 1}},
+          FrameStyle->Directive[
+            RGBColor[
+            0.4196078431372549, 0.6313725490196078, 0.4196078431372549], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->0,
+          StripOnInput->False], {1.7149858514250882, 0.4111376673657451}],
+        "DynamicName",
+        BoxID -> "VertexID$8"], 
+       TagBox[InsetBox[
+         FrameBox[
+          RowBox[{"{", 
+           
+           RowBox[{"\<\"b3\"\>", ",", "0.02`", ",", "72401290", ",", 
+            "0.04`"}], "}"}],
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameMargins->{{2, 2}, {1, 1}},
+          FrameStyle->Directive[
+            RGBColor[
+            0.4196078431372549, 0.6313725490196078, 0.4196078431372549], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->0,
+          StripOnInput->False], {2.057983021710106, 0.4111376673657451}],
+        "DynamicName",
+        BoxID -> "VertexID$9"], 
+       TagBox[InsetBox[
+         FrameBox[
+          RowBox[{"{", 
+           
+           RowBox[{"\<\"f4\"\>", ",", "0.01`", ",", "44479741", ",", 
+            "0.04`"}], "}"}],
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameMargins->{{2, 2}, {1, 1}},
+          FrameStyle->Directive[
+            RGBColor[
+            0.4196078431372549, 0.6313725490196078, 0.4196078431372549], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->0,
+          StripOnInput->False], {2.4009801919951235, 0.4111376673657451}],
+        "DynamicName",
+        BoxID -> "VertexID$10"], 
+       TagBox[InsetBox[
+         FrameBox[
+          RowBox[{"{", 
+           RowBox[{"\<\"d3\"\>", ",", "0.01`", ",", "39836757", ",", "0"}], 
+           "}"}],
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameMargins->{{2, 2}, {1, 1}},
+          FrameStyle->Directive[
+            RGBColor[
+            0.4196078431372549, 0.6313725490196078, 0.4196078431372549], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->0,
+          StripOnInput->False], {2.743977362280141, 0.4111376673657451}],
+        "DynamicName",
+        BoxID -> "VertexID$11"], 
+       TagBox[InsetBox[
+         FrameBox[
+          RowBox[{"{", 
+           
+           RowBox[{"\<\"Nc3\"\>", ",", "0.01`", ",", "25032174", ",", 
+            "0.02`"}], "}"}],
+          Background->Directive[
+            RGBColor[
+            0.9607843137254902, 0.9882352941176471, 0.9764705882352941]],
+          BaseStyle->GrayLevel[0],
+          FrameMargins->{{2, 2}, {1, 1}},
+          FrameStyle->Directive[
+            RGBColor[
+            0.4196078431372549, 0.6313725490196078, 0.4196078431372549], 
+            AbsoluteThickness[1], 
+            Opacity[1]],
+          ImageSize->Automatic,
+          RoundingRadius->0,
+          StripOnInput->False], {3.0869745325651587, 0.4111376673657451}],
+        "DynamicName",
+        BoxID -> "VertexID$12"]}}]]],
+  AlignmentPoint->Center,
+  Axes->False,
+  AxesLabel->None,
+  AxesOrigin->Automatic,
+  AxesStyle->{},
+  Background->None,
+  BaseStyle->{},
+  BaselinePosition->Automatic,
+  ContentSelectable->Automatic,
+  DefaultBaseStyle->"TreeGraphics",
+  Epilog->{},
+  FormatType->StandardForm,
+  Frame->False,
+  FrameLabel->FormBox["False", StandardForm],
+  FrameStyle->{},
+  FrameTicks->None,
+  FrameTicksStyle->{},
+  GridLines->None,
+  GridLinesStyle->{},
+  ImageMargins->0.,
+  ImagePadding->All,
+  ImageSize->{Automatic, 177.49115799786296`},
+  LabelStyle->{},
+  PlotLabel->None,
+  PlotRange->All,
+  PlotRangeClipping->False,
+  PlotRangePadding->Automatic,
+  PlotRegion->Automatic,
+  Prolog->{},
+  RotateLabel->True,
+  Ticks->Automatic,
+  TicksStyle->{}]], "Output",
+ CellChangeTimes->{
+  3.918820724506901*^9, 3.9188209306337767`*^9, 3.918820993365081*^9, 
+   3.9188210892928123`*^9, 3.9188211406013765`*^9, 3.9188213842367415`*^9, {
+   3.9188214511225743`*^9, 3.918821465748453*^9}},
+ CellLabel->"Out[14]=",ExpressionUUID->"b6e6bb7d-823f-4eee-9939-3b81aaa9c0a8"]
+}, Open  ]]
+},
+WindowSize->{478.5, 735.},
+WindowMargins->{{Automatic, -5.25}, {Automatic, 0}},
+FrontEndVersion->"13.2 for Microsoft Windows (64-bit) (January 30, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"334e5524-dbab-46ee-92a4-c4ac707a7363"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 3746, 94, 314, "Input",ExpressionUUID->"cac8d5f1-eaab-4b2c-bb99-8bd4dbc889cf"],
+Cell[4329, 118, 13191, 343, 194, "Output",ExpressionUUID->"b6e6bb7d-823f-4eee-9939-3b81aaa9c0a8"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
