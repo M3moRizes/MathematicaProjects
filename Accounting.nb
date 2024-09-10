@@ -1,0 +1,137 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4803,        127]
+NotebookOptionsPosition[      3963,        104]
+NotebookOutlinePosition[      4410,        121]
+CellTagsIndexPosition[      4367,        118]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"NetMonthlyIncome", "=", "2200"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"MonthlyExpenses", "=", 
+   RowBox[{
+   "400", "+", "300", "+", "100", "+", "80", "+", "50", "+", "50", "+", "30", 
+    "+", "60", "+", "70", "+", "100", "+", "90"}]}], ";", 
+  RowBox[{
+  "\"\<Rent\>\"", " ", "+", " ", "\"\<Health Insurance\>\"", " ", "+", " ", 
+   "\"\<Food\>\"", "+", " ", "\"\<Tuition\>\"", " ", "+", " ", 
+   "\"\<Commute\>\"", " ", "+", "\"\<Travels Home\>\"", "+", " ", 
+   "\"\<Mobile Data\>\"", " ", "+", " ", "\"\<Annual Travel Fund\>\"", " ", 
+   "+", " ", "\"\<General Shopping\>\"", "  ", "+", " ", 
+   "\"\<Miscellaneous\>\"", "+", " ", "\"\<Emergency Fund\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"NetMonthlyIncomeAfterExpenses", "=", 
+   RowBox[{"NetMonthlyIncome", "-", "MonthlyExpenses"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"MonthlyPortfolioExpansion", "=", 
+  RowBox[{"NetMonthlyIncomeAfterExpenses", "-", "300"}]}]}], "Input",
+ CellChangeTimes->{{3.8546067876230297`*^9, 3.854606809749523*^9}, {
+  3.854606875980361*^9, 3.854607012879649*^9}, {3.8546070462702713`*^9, 
+  3.8546073646464405`*^9}, {3.8546074131630154`*^9, 3.8546075152816515`*^9}},
+ CellLabel->"In[27]:=",ExpressionUUID->"6b1032c2-9dbf-4f34-bbcb-dfa2c0c3da1b"],
+
+Cell[BoxData["570"], "Output",
+ CellChangeTimes->{{3.8546074876218433`*^9, 3.85460751573358*^9}},
+ CellLabel->"Out[30]=",ExpressionUUID->"7e6abce8-3f9b-48e6-b9ab-52edf855d635"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Principal", "=", "2000"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"AROI", "=", "1.07"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"MROI", "=", 
+   RowBox[{
+    RowBox[{"(", "1.07", ")"}], "^", 
+    RowBox[{"(", 
+     RowBox[{"1", "/", "12"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Portfolio", "[", "m_", "]"}], ":=", 
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{"m", "==", "0"}], ",", "Principal", ",", 
+    RowBox[{
+     RowBox[{"MROI", "*", 
+      RowBox[{"Portfolio", "[", 
+       RowBox[{"m", "-", "1"}], "]"}]}], "+", "MonthlyPortfolioExpansion"}]}],
+    "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"NetIncomeFromInvestment", "[", "m_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"Portfolio", "[", "m", "]"}], "-", "Principal", "-", 
+   RowBox[{"m", "*", "MonthlyPortfolioExpansion"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"Portfolio", "[", "24", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"NetIncomeFromInvestment", "[", "24", "]"}]}], "Input",
+ CellChangeTimes->{{3.8546075345617456`*^9, 3.854607950627759*^9}, {
+  3.854608020559888*^9, 3.8546080235657587`*^9}},
+ CellLabel->
+  "In[147]:=",ExpressionUUID->"293c213b-2cbb-414e-83f0-b897df2a99b5"],
+
+Cell[BoxData["16897.312601988895`"], "Output",
+ CellChangeTimes->{
+  3.854607658583007*^9, {3.854607751226231*^9, 3.854607789451308*^9}, {
+   3.8546078388209004`*^9, 3.8546079510188313`*^9}, 3.8546080239243484`*^9},
+ CellLabel->
+  "Out[152]=",ExpressionUUID->"33493580-bfbb-49ee-88a3-ce3b34082a4c"],
+
+Cell[BoxData["1217.312601988895`"], "Output",
+ CellChangeTimes->{
+  3.854607658583007*^9, {3.854607751226231*^9, 3.854607789451308*^9}, {
+   3.8546078388209004`*^9, 3.8546079510188313`*^9}, 3.8546080239293737`*^9},
+ CellLabel->
+  "Out[153]=",ExpressionUUID->"974d3dee-7880-4e32-959a-660de568cf4b"]
+}, Open  ]]
+},
+WindowSize->{573., 628.7142857142857},
+WindowMargins->{{Automatic, 33.42857142857133}, {
+  36.857142857142776`, Automatic}},
+FrontEndVersion->"12.3 for Microsoft Windows (64-bit) (July 9, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"fbf8769b-098a-4b35-89d6-d774a7be4f0f"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 1314, 25, 181, "Input",ExpressionUUID->"6b1032c2-9dbf-4f34-bbcb-dfa2c0c3da1b"],
+Cell[1897, 49, 176, 2, 32, "Output",ExpressionUUID->"7e6abce8-3f9b-48e6-b9ab-52edf855d635"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2110, 56, 1236, 31, 200, "Input",ExpressionUUID->"293c213b-2cbb-414e-83f0-b897df2a99b5"],
+Cell[3349, 89, 298, 5, 32, "Output",ExpressionUUID->"33493580-bfbb-49ee-88a3-ce3b34082a4c"],
+Cell[3650, 96, 297, 5, 32, "Output",ExpressionUUID->"974d3dee-7880-4e32-959a-660de568cf4b"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
